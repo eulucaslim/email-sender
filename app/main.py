@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 from app.routers import emails
 import uvicorn
 
@@ -10,7 +10,7 @@ api.include_router(emails.router, tags=["Gmail"])
 
 @app.get('/', tags=['Hello World'])
 def main():
-    return JSONResponse(content={'msg': 'Hello World!'})
+    return RedirectResponse(url='/docs')
 
 app.include_router(api)
 
