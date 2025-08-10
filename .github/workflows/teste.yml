@@ -20,4 +20,4 @@ jobs:
         pip install flake8 pytest
     - name: Test with pytest
       run: |
-        pytest /app/tests
+        pytest app/tests/
