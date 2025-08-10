@@ -4,9 +4,8 @@ import logging
 import os
 
 # Configure basic logging (optional, but good for quick starts)
-logging.basicConfig(
-	level=logging.INFO, 
-	format='%(asctime)s - %(levelname)s - %(message)s'
+logging.basicConfig(level=logging.INFO, format=(
+    '%(asctime)s - %(levelname)s - %(message)s')
 )
 # Get a logger instance
 logger = logging.getLogger(__name__)
