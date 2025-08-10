@@ -1,0 +1,19 @@
+services:
+  email-sender:
+    container_name: email-sender
+    image: email-sender:1.0
+    command: "uvicorn app.main:app --host 0.0.0.0 --port ${EMAIL_PORT}"
+    environment:
+      - SERVER_EMAIL
+      - PASSWORD_EMAIL
+      - SMTP_SERVER
+      - SMTP_PORT
+      - EMAIL_PORT
+    ports:
+      - '${EMAIL_PORT}:${EMAIL_PORT}'
+    networks:
+      - aut_network
+
+networks:
+  aut_network:
+    driver: bridge

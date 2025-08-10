@@ -1,6 +1,7 @@
-from fastapi import FastAPI, APIRouter
-from fastapi.responses import JSONResponse, RedirectResponse
 from app.routers import emails
+from app.config.settings import EMAIL_PORT
+from fastapi import FastAPI, APIRouter
+from fastapi.responses import RedirectResponse
 import uvicorn
 
 app = FastAPI(title="Micro Sass EmailSender")
@@ -15,4 +16,4 @@ def main():
 app.include_router(api)
 
 if __name__ == '__main__':
-    uvicorn.run('app.main:app', host='0.0.0.0', port=8000)
+    uvicorn.run('app.main:app', host='0.0.0.0', port=EMAIL_PORT)
