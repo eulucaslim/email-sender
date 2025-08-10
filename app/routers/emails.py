@@ -5,6 +5,7 @@ from fastapi.responses import JSONResponse
 
 router = APIRouter()
 
+
 @router.post('/send_email')
 def send_email(payload: Payload):
     try:

@@ -1,4 +1,9 @@
-from app.config.settings import SMTP_SERVER, SERVER_EMAIL, SMTP_PORT, PASSWORD_EMAIL
+from app.config.settings import (
+	SMTP_SERVER,
+	SERVER_EMAIL,
+	SMTP_PORT,
+	PASSWORD_EMAIL
+)
 from app.config.settings import logger
 from app.models.payload import Payload
 from email.message import EmailMessage
